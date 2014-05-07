@@ -24,8 +24,8 @@ function dataUp(MTAFareData){  //This is my function for charting out the fare i
 	var ChartOptions = {                           
           title: "Fare Hikes Since 1953",       //This variable allows me to adjust the look of my chart and I tinkered with its width and height
           width: 700,
-          height: 500 
-                 
+          height: 400, 
+          vAxis: {title: "Rate of Change"}                 
          };
         
 		//tells Google Visualization to create a line chart 
