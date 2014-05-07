@@ -19,7 +19,7 @@ function dataUp(MTAFareData){   //This is my function for charting out the fare 
 	gDataTable.addRows(MTAFareData.rows); 
 	
 	var ChartOptions = {                           //This variable allows me to customize the appearance of my chart
-          title: "Fare Media Liability Since 2003",       //This is my headline
+          //title: "Fare Media Liability Since 2003",       //This is my headline
           vAxis: {title: "Year"},
           hAxis: {title: "Estimated Amount From Unused Farecards and Tolls In Millions of Dollars"}      
          };
