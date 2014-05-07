@@ -2,35 +2,35 @@
  * @author Chidinma Irene Nwoye
  */
 
+
+
 console.log("My Javascript is working"); //I'm testing my javascript file
 
-function dataUp(MTAFareData){            
+function dataUp(MTAFareData){  //This is my function for charting out the fare increase rate since 1953          
 	
-	console.log(MTAFareData);        
+	console.log(MTAFareData);        //I'm testing my function to see that it works
 	
 	var gDataTable = new google.visualization.DataTable();
 	
-	//When I add columns, the 1st parameter is the data type in that column
-	// The 2nd parameter is the name of the column
+	//I've added the columns for my data
 	
-	gDataTable.addColumn('string', MTAFareData.columns[0]);
+	gDataTable.addColumn('string', MTAFareData.columns[0]); 
 	gDataTable.addColumn('number', MTAFareData.columns[1]);
 	gDataTable.addColumn('number', MTAFareData.columns[2]);
 	gDataTable.addColumn('number', MTAFareData.columns[3]);
 	
 	gDataTable.addRows(MTAFareData.rows);
 	
-	var ChartOptions = {                           //create options object to actually customize the look of our chart
-          title: "Fare Hikes Since 1953",       //This is a configuration option
+	var ChartOptions = {                           
+          title: "Fare Hikes Since 1953",       //This variable allows me to adjust the look of my chart and I tinkered with its width and height
           width: 700,
           height: 500 
-          //vAxis: {title: 'Rate of Change'},
-          //isStacked: true       
+                 
          };
         
 		//tells Google Visualization to create a line chart 
 	var ThisChart = new google.visualization.LineChart(document.getElementById('newChartDiv')); 
-	ThisChart.draw(gDataTable,ChartOptions);
+	ThisChart.draw(gDataTable,ChartOptions); //This will tell my code to draw the code
 	
 	
 	
@@ -40,7 +40,7 @@ function GoogleVizUp() {
 
 	console.log("I've put up Google!");
 	$.get("https://www.googleapis.com/fusiontables/v1/query?sql=SELECT+*+FROM+1ceoh_Z0vPS8UDRd-5cMw6GjBtynCZ7-KiCHzhMq8&key=AIzaSyCgfAUYUUuX8vurL0WtKGYRGho11LEnsPI", dataUp, "json"); //I'm retrieving my json data 
-	
+	//I created a fusion table with my csv data for my line chart
 }	
 	
 
