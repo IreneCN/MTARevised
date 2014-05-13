@@ -20,12 +20,16 @@ function dataUp(MTAFareData){   //This is my function for charting out the fare 
 	
 	var ChartOptions = {                           //This variable allows me to customize the appearance of my chart
           //title: "Fare Media Liability Since 2003",       //This is my headline
-          vAxis: {title: "Year"},
-          hAxis: {title: "Estimated Amount From Unused Farecards and Tolls In Millions of Dollars"}      
+          width: '100%',
+          height: 500, 
+          bar: {groupWidth: "75%"},
+          vAxis: {title: "Estimated Amount From Unused Farecards and Tolls In Millions of $", format:'$###,###,###.00'}, // Money format},
+          colors: ['#0cc0c9'],
+          chartArea: {width: '50%'}      
          };
         
 		//tells Google Visualization to create a line chart 
-	var ThisChart = new google.visualization.BarChart(document.getElementById('newChartDiv2')); 
+	var ThisChart = new google.visualization.ColumnChart(document.getElementById('newChartDiv2')); 
 	ThisChart.draw(gDataTable,ChartOptions); //This allows me to draw my visualization
 	
 	
