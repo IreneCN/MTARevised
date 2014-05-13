@@ -17,15 +17,18 @@ function dataUp1(MTAFareData){  //This is my function for charting out the fare 
 	gDataTable.addColumn('string', MTAFareData.columns[0]); 
 	gDataTable.addColumn('number', MTAFareData.columns[1]);
 	gDataTable.addColumn('number', MTAFareData.columns[2]);
-	gDataTable.addColumn('number', MTAFareData.columns[3]);
+	
 	
 	gDataTable.addRows(MTAFareData.rows);
 	
 	var ChartOptions1 = {                           
           //title: "Fare Hikes Since 1953",       //This variable allows me to adjust the look of my chart and I tinkered with its width and height
-          width: 700,
-          height: 400, 
-          vAxis: {title: "Rate of Change"}                 
+          width: '100%',
+         height: 500, 
+          vAxis: {title: "Revenue Per Ride", format:'$###,###,###.00'}, // Money format
+          colors: ['#FF405B','#0cc0c9'], 
+         hAxis : {showTextEvery:3},   
+         chartArea: {width: '50%'}             
          };
         
 		//tells Google Visualization to create a line chart 
@@ -39,7 +42,7 @@ function dataUp1(MTAFareData){  //This is my function for charting out the fare 
 function GoogleVizUp1() {
 
 	console.log("I've put up Google!");
-	$.get("https://www.googleapis.com/fusiontables/v1/query?sql=SELECT+*+FROM+1ceoh_Z0vPS8UDRd-5cMw6GjBtynCZ7-KiCHzhMq8&key=AIzaSyCgfAUYUUuX8vurL0WtKGYRGho11LEnsPI", dataUp1, "json"); //I'm retrieving my json data 
+	$.get("https://www.googleapis.com/fusiontables/v1/query?sql=SELECT+*+FROM+1PCP5JMDxHNt6seEZZjPEtSIJAlb2v_IEl-l6di5_&key=AIzaSyCgfAUYUUuX8vurL0WtKGYRGho11LEnsPI", dataUp1, "json"); //I'm retrieving my json data 
 	//I created a fusion table with my csv data for my line chart
 }	
 	
